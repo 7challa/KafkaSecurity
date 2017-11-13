@@ -1,0 +1,15 @@
+KafkaServer {
+    org.apache.kafka.common.security.plain.PlainLoginModule required
+    username="admin" #super user
+    password="admin-secret" # super user password
+    user_admin="admin-secret" # normal user
+    user_alice="alice-secret"; # normal user
+};
+
+// The below is for ZooKeeper client authentication
+Client {
+   org.apache.kafka.common.security.plain.PlainLoginModule required
+   #org.apache.zookeeper.server.auth.DigestLoginModule required
+   username="admin"
+   password="admin-secret";
+};
