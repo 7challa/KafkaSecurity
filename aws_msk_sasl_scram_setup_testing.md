@@ -1,4 +1,4 @@
-Follow the below steps after post MSK setup.
+# Follow the below steps after post MSK setup.
 
 1. Retrieve cluster details. Run the below command to get the Zookeeper Connection String
 
