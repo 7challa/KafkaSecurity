@@ -1,5 +1,7 @@
 # Follow the below steps after post MSK setup.
 
+## 0. Setup a users in "Secrets Manager" and associate the secret in AWS MSK Cluster.
+
 1. Retrieve cluster details. Run the below command to get the Zookeeper Connection String
 
 ```
