@@ -11,7 +11,7 @@ aws kafka get-bootstrap-brokers --cluster-arn $ClusterArn
 Look for ZookeeperConnectString in the response JSON.
 
 ```
-bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:CN=${DN}" --operation Read --group=\* --topic <topic_name>
+bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:CN=${DN}" --operation Read --group=* --topic <topic_name>
 ```
 
 ## Add ACL to application user to have READ access to topic: <topic_name>
