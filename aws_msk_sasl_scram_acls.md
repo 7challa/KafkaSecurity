@@ -52,11 +52,14 @@ bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectStr
 ### Examples
 
 How do you remove ACL's with groups? Lets say you have two users with ACls as found from "list" command
+
+```
 Current ACLs for resource `ResourcePattern(resourceType=GROUP, name=*, patternType=LITERAL)`:
 (principal=User:AmazonMSK_adhacp_2J3RFSBJ, host=_, operation=READ, permissionType=ALLOW)
 (principal=User:AmazonMSK_adhacp_2J3RFSBJ, host=_, operation=DESCRIBE, permissionType=ALLOW)
 (principal=User:AmazonMSK_adhacp_2TKVBWFA, host=_, operation=READ, permissionType=ALLOW)
 (principal=User:AmazonMSK_adhacp_2TKVBWFA, host=_, operation=DESCRIBE, permissionType=ALLOW)
+```
 
 ```
  bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --remove --allow-principal "User:AmazonMSK_adhacp_2TKVBWFA" --operation Describe --operation Read --group '*'
