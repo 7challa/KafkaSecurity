@@ -14,10 +14,16 @@ Look for ZookeeperConnectString in the response JSON.
 bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:CN=${DN}" --operation Read --group=* --topic <topic_name>
 ```
 
+## List ACLs
+
+```
+bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --list --topic "*"
+```
+
 ## Add ACL to application user to have READ access to topic: <topic_name>
 
 ```
-bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:app_user" --operation Read --group=\* --topic <topic_name>
+bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:app_user" --operation Read --operation Describe --group '*' --topic <topic_name>
 ```
 
 ## Add ACL to application user to have WRITE access to topic: <topic_name>
