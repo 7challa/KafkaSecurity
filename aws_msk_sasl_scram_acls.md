@@ -25,14 +25,18 @@ bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectStr
 ## Add ACL to application user to have READ access to topic: <topic_name>
 
 ```
-bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:app_user" --operation Read --operation Describe --group '*' --topic <topic_name>
+bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:{app_user}" --operation Read --operation Describe --group '*' --topic {topic_name}
 ```
+
+# Note: topic_name can be "*"
 
 ## Add ACL to application user to have WRITE access to topic: <topic_name>
 
 ```
-bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:app_user" --operation Write --topic <topic_name>
+bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:{app_user}" --operation Write --topic {topic_name}
 ```
+
+# Note: topic_name can be "*"
 
 ## Add ACL to super_user to have read/write/delete access to all topics
 
