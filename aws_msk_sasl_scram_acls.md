@@ -19,7 +19,7 @@ bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectStr
 ## Add Brokers to ACL
 
 ```
-bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:CN=${DN}" --operation Read --group=* --topic <topic_name>
+bin/kafka-acls.sh --authorizer-properties zookeeper.connect=$ZookeeperConnectString --add --allow-principal "User:CN=${DN}" --operation Read --group '*' --topic '*'
 ```
 
 ## Add ACL to application user to have READ access to topic: <topic_name>
