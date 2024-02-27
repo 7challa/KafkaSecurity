@@ -5,3 +5,4 @@ Example: create_topics.py "b-2.mskdhacpkafka17801670.rtwrz0.c21.kafka.us-east-1.
 2. Skips topics if the topic is already present on the cluster
 3. Doesn't automatically update topic paramters is they are update in the second run
 
+Note: Need kafka-2.8.1 install (tar) on EC2 & download IAM jar from AWS to lib folder
