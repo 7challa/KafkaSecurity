@@ -1,0 +1,29 @@
+topics:
+  - name: ExampleTopic
+    replication_factor: 3
+    partitions: 2
+    retention_time: 604800
+  - name: pytopic_a
+    replication_factor: 3
+    partitions: 2
+    retention_time: 604800
+  - name: pytopic_a
+    replication_factor: 3
+    partitions: 1
+    retention_time: 604800
+  - name: pytopic_b
+    replication_factor: 3
+    partitions: 1
+    retention_time: 604800
+  - name: pytopic_c
+    replication_factor: 3
+    partitions: 1
+    retention_time: 604800
+  - name: mario
+    replication_factor: 3
+    partitions: 1
+    retention_time: 604800
+  - name: galaxy
+    replication_factor: 3
+    partitions: 2
+    retention_time: 604800
