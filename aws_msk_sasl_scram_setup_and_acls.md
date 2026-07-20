@@ -63,7 +63,10 @@ Note: BootstrapServerString = the scram auth enabled URL (eg: broker_host:9096)
 
 - To view ACLs assigned for user kafka_admin
 ```
-<path-to-your-kafka-installation>/bin/kafka-acls.sh --bootstrap-server <BootstrapServerString> --command-config <client.properties> --list
+<path-to-your-kafka-installation>/bin/kafka-acls.sh \
+            --bootstrap-server <BootstrapServerString> \
+            --command-config <client.properties> \
+            --list
 ```
 
 ```
@@ -83,25 +86,65 @@ BOOTSTRAP_SERVERS="b-1.demo2.orange.c23.kafka.us-east-1.amazonaws.com:9096,b-2.d
 Additional permissions are needed for terraform 
 
 ```
-./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS --command-config ./client_sasl.properties --add --allow-principal User:kafka_cicd --operation Create --topic "*"
+./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS \
+            --command-config ./client_sasl.properties \
+            --add \
+            --allow-principal User:kafka_cicd \
+            --operation Create \
+            --topic "*"
 
-./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS --command-config ./client_sasl.properties --add --allow-principal User:kafka_cicd --operation Describe --topic "*"
+./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS \
+            --command-config ./client_sasl.properties \
+            --add \
+            --allow-principal User:kafka_cicd \
+            --operation Describe \
+            --topic "*"
 
 # Add Write permission (required for topic creation verification)
-./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS --command-config ./client_sasl.properties --add --allow-principal User:kafka_cicd --operation Write --topic "*"
+./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS \
+            --command-config ./client_sasl.properties \
+            --add \
+            --allow-principal User:kafka_cicd \
+            --operation Write \
+            --topic "*"
 
 # Add Read permission (may be required for verification)
-./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS --command-config ./client_sasl.properties --add --allow-principal User:kafka_cicd --operation Read --topic "*"
+./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS \
+            --command-config ./client_sasl.properties \
+            --add \
+            --allow-principal User:kafka_cicd \
+            --operation Read \
+            --topic "*"
 
 # Add Alter permission (required for topic configuration)
-./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS --command-config ./client_sasl.properties --add --allow-principal User:kafka_cicd --operation Alter --topic "*"
+./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS \
+            --command-config ./client_sasl.properties \
+            --add \
+            --allow-principal User:kafka_cicd \
+            --operation Alter \
+            --topic "*"
 
 # Add DescribeConfigs permission (required to read topic configs)
-./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS --command-config ./client_sasl.properties --add --allow-principal User:kafka_cicd --operation DescribeConfigs --topic "*"
+./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS \
+            --command-config ./client_sasl.properties \
+            --add \
+            --allow-principal User:kafka_cicd \
+            --operation DescribeConfigs \
+            --topic "*"
 
 # Add AlterConfigs permission (required to set retention.ms and other configs)
-./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS --command-config ./client_sasl.properties --add --allow-principal User:kafka_cicd --operation AlterConfigs --topic "*"
+./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS \
+            --command-config ./client_sasl.properties \
+            --add \
+            --allow-principal User:kafka_cicd \
+            --operation AlterConfigs \
+            --topic "*"
 
 # Delete permission 
-./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS --command-config ./client_sasl.properties --add --allow-principal User:kafka_cicd --operation Delete --topic "*""
+./kafka-acls.sh --bootstrap-server $BOOTSTRAP_SERVERS \
+            --command-config ./client_sasl.properties \
+            --add \
+            --allow-principal User:kafka_cicd \
+            --operation Delete \
+            --topic "*"
 ```
