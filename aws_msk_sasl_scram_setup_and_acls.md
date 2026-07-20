@@ -42,7 +42,7 @@ Run the following command from the Kafka bin directory:
             --add \
             --allow-principal User:kafka_admin \
             --operation All \
-            --group="*"" \
+            --group="*" \
             --topic="*" \
 ```
 
