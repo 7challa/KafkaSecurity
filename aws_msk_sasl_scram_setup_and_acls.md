@@ -36,7 +36,14 @@ Note: Here you should create a separate file for each user. For Example: clienta
 
 Run the following command from the Kafka bin directory:
 ```
-<path-to-your-kafka-installation>/bin/kafka-acls.sh --bootstrap-server <BootstrapServerString> --command-config <client.properties> --add --allow-principal User:kafka_admin --operation All --group="*"" --topic="*"
+<path-to-your-kafka-installation>/bin/kafka-acls.sh
+            --bootstrap-server <BootstrapServerString> \
+            --command-config <client.properties> \
+            --add \
+            --allow-principal User:kafka_admin \
+            --operation All \
+            --group="*"" \
+            --topic="*" \
 ```
 
 This ACL command essentially grants the user 'kafka_admin' superuser or admin-level privileges for managing topics and consumer groups within the Kafka cluster.
