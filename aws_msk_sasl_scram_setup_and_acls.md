@@ -44,6 +44,7 @@ Run the following command from the Kafka bin directory:
             --operation All \
             --group="*" \
             --topic="*" \
+            --transactional-id "*"
 ```
 
 This ACL command essentially grants the user 'kafka_admin' superuser or admin-level privileges for managing topics and consumer groups within the Kafka cluster.
