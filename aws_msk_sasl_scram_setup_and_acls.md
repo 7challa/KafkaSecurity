@@ -148,4 +148,13 @@ Additional permissions are needed for terraform
             --allow-principal User:kafka_cicd \
             --operation Delete \
             --topic "*"
+
+# Grant principal access to any consumer group
+./kafka-acls.sh \
+  --bootstrap-server "$BOOTSTRAP_SERVERS" \
+  --command-config ./client_sasl.properties \
+  --add \
+  --allow-principal User:kafka_cicd \
+  --operation Read \
+  --group '*'
 ```
